@@ -6,8 +6,8 @@ if __name__ == "__main__":
   import os
 
   INDEX_OL = "OLG.PA"
-  OPENING = os.getenv("OPENING")
-  CLOSING = os.getenv("CLOSING")
+  OPENING = os.getenv("OPENING").lower() in ('true', '1', 't')
+  CLOSING = os.getenv("CLOSING").lower() in ('true', '1', 't')
   print(OPENING)
   print(CLOSING)
   
