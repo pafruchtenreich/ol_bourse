@@ -49,6 +49,6 @@ if __name__ == "__main__":
     return response
 
   tweet_content = make_tweet_dict(INDEX_OL, OPENING, CLOSING)
-  print5(tweet_content["text"])
+  print(tweet_content["text"])
   r = post_tweet(oauth,tweet_content)
   print(r.status_code)
