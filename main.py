@@ -42,6 +42,8 @@ if __name__ == "__main__":
   
   def post_tweet(oauth,tweet_dict):
     response = oauth.post("https://api.twitter.com/2/tweets",json=tweet_dict)
+    return response
 
   tweet_content = make_tweet_dict(INDEX_OL, OPENING, CLOSING)
-  post_tweet(oauth,tweet_content)
+  r = post_tweet(oauth,tweet_content)
+  print(r.status_code)
