@@ -1,6 +1,8 @@
 name: Python Script Scheduler closing
 
-on: workflow_dispatch
+on:
+  schedule:
+    - cron: "25 16 * * 1-5"
 
 jobs:
   run-python-script:
