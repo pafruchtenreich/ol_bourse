@@ -7,10 +7,10 @@ if __name__ == "__main__":
   INDEX_OL = "OLG.PA"
   
   oauth = OAuth1Session(
-    os.getenv(CONSUMER_KEY),
-    client_secret=os.getenv(CONSUMER_SECRET),
-    resource_owner_key=os.getenv(ACCESS_TOKEN),
-    resource_owner_secret=os.getenv(ACCESS_TOKEN_SECRET),
+    os.getenv("CONSUMER_KEY"),
+    client_secret=os.getenv("CONSUMER_SECRET"),
+    resource_owner_key=os.getenv("ACCESS_TOKEN"),
+    resource_owner_secret=os.getenv("ACCESS_TOKEN_SECRET"),
   )
   
   def get_current_price(index):
