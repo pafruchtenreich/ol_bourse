@@ -2,14 +2,15 @@ if __name__ == "__main__":
   from requests_oauthlib import OAuth1Session
   import yfinance as yf
   import time
+  import os
 
   INDEX_OL = "OLG.PA"
   
   oauth = OAuth1Session(
-    CONSUMER_KEY,
-    client_secret=CONSUMER_SECRET,
-    resource_owner_key=ACCESS_TOKEN,
-    resource_owner_secret=ACCESS_TOKEN_SECRET,
+    os.getenv(CONSUMER_KEY),
+    client_secret=os.getenv(CONSUMER_SECRET),
+    resource_owner_key=os.getenv(ACCESS_TOKEN),
+    resource_owner_secret=os.getenv(ACCESS_TOKEN_SECRET),
   )
   
   def get_current_price(index):
