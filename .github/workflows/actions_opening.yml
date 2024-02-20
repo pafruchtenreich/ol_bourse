@@ -2,7 +2,7 @@ name: Python Script Scheduler opening
 
 on:
   schedule:
-    - cron: "52 7 * * 1-5"
+    - cron: "53 7 * * 1-5"
 
 jobs:
   run-python-script:
