@@ -20,9 +20,9 @@ if __name__ == "__main__":
     stock_price = get_current_price(INDEX_OL)
     tweet_dict = {"text": f"At {curr_time}, OL's current share price is {stock_price}€."}
     return tweet_dict
-
-def post_tweet(oauth,tweet_dict):
+  
+  def post_tweet(oauth,tweet_dict):
     response = oauth.post("https://api.twitter.com/2/tweets",json=tweet_dict)
 
-tweet_content = make_tweet_dict(INDEX_OL)
-post_tweet(oauth,tweet_dict)
+  tweet_content = make_tweet_dict(INDEX_OL)
+  post_tweet(oauth,tweet_dict)
