@@ -1,6 +1,6 @@
 name: Python Script Scheduler closing
 
-on: workflow_redispatch
+on: workflow_dispatch
 
 jobs:
   run-python-script:
