@@ -18,7 +18,7 @@ if __name__ == "__main__":
   def make_tweet_dict(INDEX_OL):
     curr_time = time.strftime("%H:%M:%S", time.localtime())
     stock_price = get_current_price(INDEX_OL)
-    tweet_dict = {"text": f"At {curr_time}, OL's current share price is {stock_price}€ and fuck Mbuzzcut."}
+    tweet_dict = {"text": f"At {curr_time}, OL's current share price is {stock_price}\N{euro sign} and fuck Mbuzzcut."}
     return tweet_dict
   
   def post_tweet(oauth,tweet_dict):
