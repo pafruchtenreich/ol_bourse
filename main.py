@@ -30,7 +30,7 @@ if __name__ == "__main__":
       tweet_dict = {"text": f"Hello the Gones, today is {date}, the market has opened at {opening_value}\N{euro sign} and as always fuck Mbuzzcut."}
     elif CLOSING:
       opening_value = get_value(INDEX_OL,"open")
-      closing_value = get_value(INDEX_OL,"close")
+      closing_value = get_value(INDEX_OL,"currentPrice")
       percentage_value = round((closing_value - opening_value)/opening_value*100,2)
       if percentage_value>0:
         tweet_dict = {"text": f"Today has been about making easy money with a +{percentage_value}%."}
