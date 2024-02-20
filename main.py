@@ -4,12 +4,14 @@ if __name__ == "__main__":
   import time
   from datetime import datetime
   import os
+  import pytz
 
   INDEX_OL = "OLG.PA"
   OPENING = os.getenv("OPENING").lower() in ('true', '1', 't')
   CLOSING = os.getenv("CLOSING").lower() in ('true', '1', 't')
-  print(OPENING)
-  print(CLOSING)
+  print("opening ?", OPENING)
+  print("closing ?", CLOSING)
+  TIMEZONE = pytz.timezone('Europe/Paris')
   
   oauth = OAuth1Session(
     os.getenv("CONSUMER_KEY"),
@@ -22,8 +24,6 @@ if __name__ == "__main__":
     return yf.Ticker(index).info[key]
     
   def make_tweet_dict(INDEX_OL, OPENING, CLOSING):
-    curr_time = time.strftime("%H:%M", time.localtime())
-    stock_price = get_value(INDEX_OL,"currentPrice")
     if OPENING:
       date = datetime.today().strftime("%A, %B %d, %Y")
       opening_value = get_value(INDEX_OL,"open")
@@ -39,6 +39,8 @@ if __name__ == "__main__":
       else:
         tweet_dict = {"text": f"A flat day, no more, no less."}
     else:
+      curr_time = datetime.now(TIMEZONE)
+      stock_price = get_value(INDEX_OL,"currentPrice")
       tweet_dict = {"text": f"At {curr_time}, OL's current share price is {stock_price}\N{euro sign} and fuck Mbuzzcut."}
     return tweet_dict
   
