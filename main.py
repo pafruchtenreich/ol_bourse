@@ -35,7 +35,7 @@ if __name__ == "__main__":
       elif percentage_value<0:
         tweet_dict = {"text": f"A day to forget like Mbuzzcut's quintuples with a {percentage_value}%."}
       else:
-        tweet_dict = {"text": f"A flat, no more, no less."}
+        tweet_dict = {"text": f"A flat day, no more, no less."}
     else:
       tweet_dict = {"text": f"At {curr_time}, OL's current share price is {stock_price}\N{euro sign} and fuck Mbuzzcut."}
     return tweet_dict
