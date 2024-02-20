@@ -8,6 +8,8 @@ if __name__ == "__main__":
   INDEX_OL = "OLG.PA"
   OPENING = os.getenv("OPENING")
   CLOSING = os.getenv("CLOSING")
+  print(OPENING)
+  print(CLOSING)
   
   oauth = OAuth1Session(
     os.getenv("CONSUMER_KEY"),
