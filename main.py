@@ -26,4 +26,4 @@ if __name__ == "__main__":
     response = oauth.post("https://api.twitter.com/2/tweets",json=tweet_dict)
 
   tweet_content = make_tweet_dict(INDEX_OL)
-  post_tweet(oauth,tweet_dict)
+  post_tweet(oauth,tweet_content)
