@@ -27,7 +27,7 @@ if __name__ == "__main__":
     if OPENING:
       date = datetime.today().strftime("%A, %B %d, %Y")
       opening_value = get_value(INDEX_OL,"open")
-      tweet_dict = {"text": f"Hello the Gones, today is {date}, the market has opened at {opening_value} and as always fuck Mbuzzcut."}
+      tweet_dict = {"text": f"Hello the Gones, today is {date}, the market has opened at {opening_value}\N{euro sign} and as always fuck Mbuzzcut."}
     elif CLOSING:
       opening_value = get_value(INDEX_OL,"open")
       closing_value = get_value(INDEX_OL,"close")
