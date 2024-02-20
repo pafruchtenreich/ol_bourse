@@ -1,8 +1,6 @@
-name: Python Script Scheduler opening
+name: Python Script Scheduler closing
 
-on:
-  schedule:
-    - cron: "30 16 * * 1-5"
+on: workflow_redispatch
 
 jobs:
   run-python-script:
