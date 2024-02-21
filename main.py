@@ -39,7 +39,7 @@ if __name__ == "__main__":
       else:
         tweet_dict = {"text": f"A flat day, no more, no less."}
     else:
-      curr_time = datetime.now(TIMEZONE)
+      curr_time = datetime.now(TIMEZONE).strftime("%H:%M")
       stock_price = get_value(INDEX_OL,"currentPrice")
       tweet_dict = {"text": f"At {curr_time}, OL's current share price is {stock_price}\N{euro sign} and fuck Mbuzzcut."}
     return tweet_dict
