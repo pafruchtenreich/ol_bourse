@@ -5,6 +5,7 @@ if __name__ == "__main__":
   from datetime import datetime
   import os
   import pytz
+  import random
 
   INDEX_OL = "OLG.PA"
   OPENING = os.getenv("OPENING").lower() in ('true', '1', 't')
@@ -24,10 +25,30 @@ if __name__ == "__main__":
     return yf.Ticker(index).info[key]
     
   def make_tweet_dict(INDEX_OL, OPENING, CLOSING):
+    joueurs = [
+    "Steve Mandanda",
+    "Dimitri Payet",
+    "Arkadiusz Milik",
+    "Boubacar Kamara",
+    "Florian Thauvin",
+    "Jordan Amavi",
+    "Valère Germain",
+    "Pape Gueye",
+    "Lionel Messi",
+    "Neymar Jr",
+    "Kylian Mbappé",
+    "Marco Verratti",
+    "Mauro Icardi",
+    "Presnel Kimpembe",
+    "Angel Di Maria",
+    "Achraf Hakimi"
+]
+
+    player_insulted = random.choice(joueurs)
     if OPENING:
       date = datetime.today().strftime("%A, %B %d, %Y")
       opening_value = get_value(INDEX_OL,"open")
-      tweet_dict = {"text": f"Hello the Gones, today is {date}, the market has opened at {opening_value}\N{euro sign} and as always fuck Mbuzzcut."}
+      tweet_dict = {"text": f"Hello the Gones, today is {date}, the market has opened at {opening_value}\N{euro sign} and as always fuck {player_insulted}."}
     elif CLOSING:
       previous_opening_value = get_value(INDEX_OL,"previousClose")
       closing_value = get_value(INDEX_OL,"currentPrice")
