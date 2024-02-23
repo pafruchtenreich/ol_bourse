@@ -25,30 +25,14 @@ if __name__ == "__main__":
     return yf.Ticker(index).info[key]
     
   def make_tweet_dict(INDEX_OL, OPENING, CLOSING):
-    joueurs = [
-    "Steve Mandanda",
-    "Dimitri Payet",
-    "Arkadiusz Milik",
-    "Boubacar Kamara",
-    "Florian Thauvin",
-    "Jordan Amavi",
-    "Valère Germain",
-    "Pape Gueye",
-    "Lionel Messi",
-    "Neymar Jr",
-    "Kylian Mbappé",
-    "Marco Verratti",
-    "Mauro Icardi",
-    "Presnel Kimpembe",
-    "Angel Di Maria",
-    "Achraf Hakimi"
-]
-
-    player_insulted = random.choice(joueurs)
+    df_players = pd.read_csv("df_players.csv")
+    player_insulted = df_players.sample(1)
+    name = player_insulted.name.iloc[0]
+    club = player_insulted.club.iloc[0]
     if OPENING:
       date = datetime.today().strftime("%A, %B %d, %Y")
       opening_value = get_value(INDEX_OL,"open")
-      tweet_dict = {"text": f"Hello the Gones, today is {date}, the market has opened at {opening_value}\N{euro sign} and as always fuck {player_insulted}."}
+      tweet_dict = {"text": f"Hello the Gones, today is {date}, the market has opened at {opening_value}\N{euro sign} and as always fuck {name} from {club}."}
     elif CLOSING:
       previous_opening_value = get_value(INDEX_OL,"previousClose")
       closing_value = get_value(INDEX_OL,"currentPrice")
