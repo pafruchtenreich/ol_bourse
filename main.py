@@ -8,7 +8,7 @@ if __name__ == "__main__":
   import pytz
   import random
 
-  INDEX_OL = "OLG.PA"
+  INDEX_OL = "EFG.PA"
   OPENING = os.getenv("OPENING").lower() in ('true', '1', 't')
   CLOSING = os.getenv("CLOSING").lower() in ('true', '1', 't')
   print("opening ?", OPENING)
