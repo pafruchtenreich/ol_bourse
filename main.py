@@ -29,9 +29,6 @@ if __name__ == "__main__":
     if OPENING:
       date = datetime.today().strftime("%A, %B %d, %Y")
       opening_value = get_value(INDEX_OL,"open")
-      df_players = pd.read_csv("df_players.csv")
-      name = player_insulted.name.iloc[0]
-      club = player_insulted.club.iloc[0]
       tweet_dict = {"text": f"Hello the Gones, today is {date}, the market has opened at {opening_value}\N{euro sign}."}
     elif CLOSING:
       previous_opening_value = get_value(INDEX_OL,"previousClose")
