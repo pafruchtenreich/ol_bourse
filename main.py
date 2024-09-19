@@ -30,10 +30,9 @@ if __name__ == "__main__":
       date = datetime.today().strftime("%A, %B %d, %Y")
       opening_value = get_value(INDEX_OL,"open")
       df_players = pd.read_csv("df_players.csv")
-      player_insulted = df_players.sample(1)
       name = player_insulted.name.iloc[0]
       club = player_insulted.club.iloc[0]
-      tweet_dict = {"text": f"Hello the Gones, today is {date}, the market has opened at {opening_value}\N{euro sign} and as always fuck {name} from {club}."}
+      tweet_dict = {"text": f"Hello the Gones, today is {date}, the market has opened at {opening_value}\N{euro sign}."}
     elif CLOSING:
       previous_opening_value = get_value(INDEX_OL,"previousClose")
       closing_value = get_value(INDEX_OL,"currentPrice")
@@ -47,7 +46,7 @@ if __name__ == "__main__":
     else:
       curr_time = datetime.now(TIMEZONE).strftime("%H:%M")
       stock_price = get_value(INDEX_OL,"currentPrice")
-      tweet_dict = {"text": f"At {curr_time}, OL's current share price is {stock_price}\N{euro sign} and fuck Mbuzzcut."}
+      tweet_dict = {"text": f"At {curr_time}, OL's current share price is {stock_price}\N{euro sign}."}
     return tweet_dict
   
   def post_tweet(oauth,tweet_dict):
