@@ -55,5 +55,6 @@ if __name__ == "__main__":
 
   tweet_content = make_tweet_dict(INDEX_OL, OPENING, CLOSING)
   print(tweet_content["text"])
+  #It works
   r = post_tweet(oauth,tweet_content)
   print(r.status_code)
